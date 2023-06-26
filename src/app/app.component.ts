@@ -1,3 +1,5 @@
+import { Country } from './models/country.model';
+import { CountryService } from './services/country.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rest-countries-api';
+  countries: Array<Country> = [];
+
+  constructor(private countryService: CountryService) {
+    this.countryService.getAllCountries().subscribe((res) => {
+      console.log('res',res);
+    })
+
+  }
 }

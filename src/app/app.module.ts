@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { CountryCardComponent } from './components/country-card/country-card.component';
 import { CountryPageComponent } from './components/country-page/country-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CountryPageComponent } from './components/country-page/country-page.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
