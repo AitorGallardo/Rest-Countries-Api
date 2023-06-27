@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Country } from 'src/app/models/country.model';
+import { FilterObject } from 'src/app/models/types';
 import { CountryService } from 'src/app/services/country.service';
 
 @Component({
@@ -10,24 +11,30 @@ import { CountryService } from 'src/app/services/country.service';
 })
 export class CountryHomeComponent {
   inputValue: string = '';
+  selectedRegion: string = '';
   countries: Array<Country> = [];
   fiteredCountries: Array<Country> = [];
 
-  constructor(private countryService: CountryService, private router: Router){
+  constructor(private countryService: CountryService, private router: Router) {
     this.countryService.getAllCountries().subscribe((res) => {
       this.countries = res;
       this.fiteredCountries = res;
 
-      const hola = res.find((country)=>country.name.toLowerCase().includes('jorda'))
-      console.log('hola',hola);
     })
   }
 
-  navigate({name}:{name:string}): void {
-    this.router.navigate(['/details',name]);
+  navigate({ name }: { name: string }): void {
+    this.router.navigate(['/details', name]);
   }
 
   onInputChange(target: any): void {
-    this.fiteredCountries = this.countryService.filterCountry(this.inputValue,this.countries);
+    const { value: inputValue } = target;
+    const filterObj: FilterObject = { inputValue }
+    this.fiteredCountries = this.countryService.filterCountry(filterObj, this.countries);
+  }
+  onSelectorChange(target: any): void {
+    const { value: selectValue } = target;
+    const filterObj: FilterObject = { selectValue }
+    this.fiteredCountries = this.countryService.filterCountry(filterObj, this.countries);
   }
 }

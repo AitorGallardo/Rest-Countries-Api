@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Country } from '../models/country.model';
+import { FilterObject } from '../models/types';
 
 @Injectable({
   providedIn: 'root'
@@ -36,16 +37,27 @@ export class CountryService {
     return this.http.get(url).pipe(
       map(res => {
         const [rawCountry] = <Array<any>>res;
+        console.log('raw', rawCountry);
         const country = Country.create(rawCountry)
         return country;
       }));
   }
 
-  filterCountry(value: string, countries: Array<Country>): Array<Country> {
-    const lowerCasevalue = value.toLowerCase();
-    return countries.filter(({ name }) =>
-      name.toLowerCase().includes(lowerCasevalue)
+  filterCountry({ inputValue, selectValue }:FilterObject, countries: Array<Country>): Array<Country> {
+    const evalInput = inputValue ?
+      (name: string) => this.includesWithLowerCase(name, inputValue)
+      : () => true;
+    const evalSelect = selectValue ?
+      (name: string) => this.includesWithLowerCase(name, selectValue)
+      : () => true;
+
+    return countries.filter(({ name, region }) =>
+      evalInput(name) && evalSelect(region)
     )
+  }
+
+  private includesWithLowerCase(mainValue: string, checkingValue: string): boolean {
+    return mainValue.toLowerCase().includes(checkingValue.toLowerCase())
   }
 
 

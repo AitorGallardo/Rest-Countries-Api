@@ -3,3 +3,8 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.filter-section{
+  display: flex;
+  justify-content: space-between;
+}

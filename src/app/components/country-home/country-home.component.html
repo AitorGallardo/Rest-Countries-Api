@@ -1,3 +1,20 @@
-<input type="text" [(ngModel)]="inputValue" (input)="onInputChange($event.target)">
-
+<div class="filter-section">
+  <input
+    type="text"
+    [(ngModel)]="inputValue"
+    (input)="onInputChange($event.target)"
+  />
+  <select
+    [(ngModel)]="selectedRegion"
+    (change)="onSelectorChange($event.target)"
+    placeholder="hola"
+  >
+    <option value="" disabled selected hidden>Filter by Region</option>
+    <option value="Africa">Africa</option>
+    <option value="America">America</option>
+    <option value="Asia">Asia</option>
+    <option value="Europe">Europe</option>
+    <option value="Oceania">Oceania</option>
+  </select>
+</div>
 <app-country-list [countries]="fiteredCountries"></app-country-list>
