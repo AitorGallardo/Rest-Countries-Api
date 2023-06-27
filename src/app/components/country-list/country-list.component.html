@@ -1,1 +1,1 @@
-<p>country-list works!</p>
+<app-country-card *ngFor="let country of countries" [country]="country" (click)="navigate(country)"></app-country-card>
