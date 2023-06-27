@@ -1,1 +1,25 @@
-<h1>COUNTRY DETAILS</h1>
+
+<button (click)="goBack()">Back</button>
+<div class="country-page_container">
+  <img [src]="country.flag_img" [alt]="country.flag_alt" />
+  <div class="country_data">
+    <h2>{{country.name}}</h2>
+    <div class="data-columns">
+      <p><strong>Native Name: </strong>{{country.native_name}}</p>
+      <p><strong>Popoulation: </strong>{{country.population}}</p>
+      <p><strong>Region: </strong>{{country.region}}</p>
+      <p><strong>Sub Region: </strong>{{country.sub_region}}</p>
+      <p><strong>Capital: </strong>{{country.capital}}</p>
+      <p><strong>Top level Domain: </strong>{{country.top_level_domain}}</p>
+      <p><strong>Currencies: </strong>{{country.currencies}}</p>
+      <p><strong>Languages: </strong>
+      <span *ngFor="let language of country.languages">{{language}}</span>  
+    </p>
+    </div>
+    <p><strong>Border Countries: </strong>
+        <span>France</span>
+        <span>Germany</span>
+        <span>Netherlands</span>
+    </p>
+  </div>
+</div>

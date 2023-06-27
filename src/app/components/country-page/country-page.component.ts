@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Country } from 'src/app/models/country.model';
+import { CountryService } from 'src/app/services/country.service';
+
 
 @Component({
   selector: 'app-country-page',
@@ -7,26 +11,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./country-page.component.css']
 })
 export class CountryPageComponent {
-
-  countryName:  string | null = '';
-  constructor(private route: ActivatedRoute) {
-
+  country: Country;
+  constructor(private route: ActivatedRoute, private countryService: CountryService,private location: Location) {
+    this.country = new Country();
   }
 
-  removeSpacesAndLowerCase(str: string | null): string | null {
+  goBack(): void {
+    this.location.back();
+  }
+
+  removeSpacesAndLowerCase(str: string): string {
     if (str) {
       const stringWithoutSpaces = str.replace(/\s/g, '');
       const lowerCaseString = stringWithoutSpaces.toLowerCase();
       return lowerCaseString;
 
     }
-    return null;
+    return '';
   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      const name = params.get('name');
-      this.countryName = this.removeSpacesAndLowerCase(name);
+      const name = params.get('name') ? <string>params.get('name') : '';
+      this.countryService.getCountry(name).subscribe((res) => {
+        this.country = res;
+
+      })
     });
   }
 }

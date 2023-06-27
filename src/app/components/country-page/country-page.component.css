@@ -1,0 +1,21 @@
+.country-page_container{
+    display: flex;
+    padding: 2rem;
+    gap: 150px;
+}
+img{
+    object-fit: cover;
+    width: 100%;
+    flex: 1;
+    height: 400px;
+}
+.country_data{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.data-columns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
