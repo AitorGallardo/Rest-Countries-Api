@@ -9,12 +9,10 @@ import { CountryService } from 'src/app/services/country.service';
   styleUrls: ['./country-list.component.css']
 })
 export class CountryListComponent {
-  countries: Array<Country> = [];
+  @Input()countries: Array<Country> = [];
 
-  constructor(private countryService: CountryService, private router: Router){
-    this.countryService.getAllCountries().subscribe((res) => {
-      this.countries = res;
-    })
+  constructor(private router: Router){
+
   }
 
   navigate({name}:{name:string}): void {
