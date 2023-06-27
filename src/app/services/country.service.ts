@@ -41,5 +41,12 @@ export class CountryService {
       }));
   }
 
+  filterCountry(value: string, countries: Array<Country>): Array<Country> {
+    const lowerCasevalue = value.toLowerCase();
+    return countries.filter(({ name }) =>
+      name.toLowerCase().includes(lowerCasevalue)
+    )
+  }
+
 
 }

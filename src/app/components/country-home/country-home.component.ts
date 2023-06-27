@@ -11,14 +11,23 @@ import { CountryService } from 'src/app/services/country.service';
 export class CountryHomeComponent {
   inputValue: string = '';
   countries: Array<Country> = [];
+  fiteredCountries: Array<Country> = [];
 
   constructor(private countryService: CountryService, private router: Router){
     this.countryService.getAllCountries().subscribe((res) => {
       this.countries = res;
+      this.fiteredCountries = res;
+
+      const hola = res.find((country)=>country.name.toLowerCase().includes('jorda'))
+      console.log('hola',hola);
     })
   }
 
   navigate({name}:{name:string}): void {
     this.router.navigate(['/details',name]);
+  }
+
+  onInputChange(target: any): void {
+    this.fiteredCountries = this.countryService.filterCountry(this.inputValue,this.countries);
   }
 }

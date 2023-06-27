@@ -7,18 +7,22 @@ import { CountryListComponent } from './components/country-list/country-list.com
 import { CountryCardComponent } from './components/country-card/country-card.component';
 import { CountryPageComponent } from './components/country-page/country-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CountryHomeComponent } from './components/country-home/country-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryListComponent,
     CountryCardComponent,
-    CountryPageComponent
+    CountryPageComponent,
+    CountryHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
