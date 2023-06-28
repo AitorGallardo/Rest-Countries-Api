@@ -1,10 +1,14 @@
 <div class="filter-section">
-  <input
-    class="theme-background theme-color"
-    type="text"
-    [(ngModel)]="inputValue"
-    (input)="onChange()"
-  />
+  <div class="input-container">
+    <input
+      class="theme-background theme-color"
+      type="text"
+      placeholder="Search for a country..."
+      [(ngModel)]="inputValue"
+      (input)="onChange()"
+    />
+    <span class="search-icon"></span>
+  </div>
   <select
     class="theme-background theme-color"
     [(ngModel)]="selectValue"

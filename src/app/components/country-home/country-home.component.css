@@ -1,7 +1,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   font-size: var(--font-size-home);
   padding: 0 100px;
 }
@@ -9,4 +8,34 @@
 .filter-section{
   display: flex;
   justify-content: space-between;
+  padding: 40px 0px;
+}
+
+.input-container{
+  width: 100%;
+  position: relative;
+}
+
+span.search-icon{
+  left: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: pink;
+}
+
+input{
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 15px 20px 15px 60px;
+  width: 30%;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus,input:hover{
+  border: 1px solid gray;
 }
