@@ -24,7 +24,7 @@ export class CountryHomeComponent {
   }
 
   navigate({ name }: { name: string }): void {
-    this.router.navigate(['/details', name]);
+    this.router.navigate(['/details'],{queryParams:{isCode:false}});
   }
 
   onChange(): void {

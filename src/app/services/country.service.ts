@@ -31,13 +31,22 @@ export class CountryService {
       }));
   }
 
-  getCountry(name: string): Observable<Country> {
+  getCountryByName(name: string): Observable<Country> {
     const url = `${this.API_URL}name/${name}`;
 
     return this.http.get(url).pipe(
       map(res => {
         const [rawCountry] = <Array<any>>res;
-        console.log('raw', rawCountry);
+        const country = Country.create(rawCountry)
+        return country;
+      }));
+  }
+  getCountryByCode(code: string): Observable<Country> {
+    const url = `${this.API_URL}alpha/${code}`;
+
+    return this.http.get(url).pipe(
+      map(res => {
+        const [rawCountry] = <Array<any>>res;
         const country = Country.create(rawCountry)
         return country;
       }));

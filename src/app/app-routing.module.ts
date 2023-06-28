@@ -10,6 +10,7 @@ const routes: Routes = [
     path: '',
     component: CountryHomeComponent
   },
+
   {
     path: 'details/:name',
     component: CountryPageComponent

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Country } from 'src/app/models/country.model';
 import { CountryService } from 'src/app/services/country.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -20,8 +21,15 @@ export class CountryPageComponent {
     this.location.back();
   }
 
-  navigate(name:string): void {
-    this.router.navigate(['/details', name]);
+  goToBorderCountry(name: string): void {
+
+    this.countryService.getCountryByCode(name).subscribe(res => {
+      this.country = res;
+      const newUrl = `/details/${this.country.name}`;
+
+      this.location.replaceState(newUrl);
+    })
+
   }
 
   removeSpacesAndLowerCase(str: string): string {
@@ -37,11 +45,12 @@ export class CountryPageComponent {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const name = params.get('name') ? <string>params.get('name') : '';
-      this.countryService.getCountry(name).subscribe((res) => {
+      this.countryService.getCountryByName(name).subscribe(res => {
         this.country = res;
-
-      })
+      });
     });
+
+
   }
 
 

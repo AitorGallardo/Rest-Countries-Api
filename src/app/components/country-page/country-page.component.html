@@ -17,7 +17,7 @@
     </p>
     </div>
     <p class="border-countries"><strong>Border Countries: </strong>
-      <span *ngFor="let countryName of country.border_countries" (click)="navigate(countryName)">{{countryName}}</span>
+      <span *ngFor="let countryName of country.border_countries" (click)="goToBorderCountry(countryName)">{{countryName}}</span>
         <!-- <span>France</span>
         <span>Germany</span>
         <span>Netherlands</span> -->
