@@ -2,7 +2,7 @@
 <button (click)="goBack()">Back</button>
 <div class="country-page_container">
   <img [src]="country.flag_img" [alt]="country.flag_alt" />
-  <div class="country_data">
+  <div class="country-page_data">
     <h2>{{country.name}}</h2>
     <div class="data-columns">
       <p><strong>Native Name: </strong>{{country.native_name}}</p>
@@ -16,10 +16,11 @@
       <span *ngFor="let language of country.languages">{{language}}</span>  
     </p>
     </div>
-    <p><strong>Border Countries: </strong>
-        <span>France</span>
+    <p class="border-countries"><strong>Border Countries: </strong>
+      <span *ngFor="let countryName of country.border_countries" (click)="navigate(countryName)">{{countryName}}</span>
+        <!-- <span>France</span>
         <span>Germany</span>
-        <span>Netherlands</span>
+        <span>Netherlands</span> -->
     </p>
   </div>
 </div>

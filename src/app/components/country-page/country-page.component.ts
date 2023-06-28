@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Country } from 'src/app/models/country.model';
 import { CountryService } from 'src/app/services/country.service';
@@ -12,12 +12,16 @@ import { CountryService } from 'src/app/services/country.service';
 })
 export class CountryPageComponent {
   country: Country;
-  constructor(private route: ActivatedRoute, private countryService: CountryService,private location: Location) {
+  constructor(private route: ActivatedRoute, private countryService: CountryService, private location: Location, private router: Router) {
     this.country = new Country();
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  navigate(name:string): void {
+    this.router.navigate(['/details', name]);
   }
 
   removeSpacesAndLowerCase(str: string): string {
@@ -39,4 +43,6 @@ export class CountryPageComponent {
       })
     });
   }
+
+
 }
