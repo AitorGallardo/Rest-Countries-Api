@@ -43,7 +43,7 @@ export class CountryService {
       }));
   }
 
-  filterCountry({ inputValue, selectValue }:FilterObject, countries: Array<Country>): Array<Country> {
+  filterCountry({ inputValue, selectValue }: FilterObject, countries: Array<Country>): Array<Country> {
     const evalInput = inputValue ?
       (name: string) => this.includesWithLowerCase(name, inputValue)
       : () => true;

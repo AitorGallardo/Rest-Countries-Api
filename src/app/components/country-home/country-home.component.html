@@ -2,11 +2,11 @@
   <input
     type="text"
     [(ngModel)]="inputValue"
-    (input)="onInputChange($event.target)"
+    (input)="onChange()"
   />
   <select
-    [(ngModel)]="selectedRegion"
-    (change)="onSelectorChange($event.target)"
+    [(ngModel)]="selectValue"
+    (change)="onChange()"
     placeholder="hola"
   >
     <option value="" disabled selected hidden>Filter by Region</option>

@@ -11,7 +11,7 @@ import { CountryService } from 'src/app/services/country.service';
 })
 export class CountryHomeComponent {
   inputValue: string = '';
-  selectedRegion: string = '';
+  selectValue: string = '';
   countries: Array<Country> = [];
   fiteredCountries: Array<Country> = [];
 
@@ -27,14 +27,10 @@ export class CountryHomeComponent {
     this.router.navigate(['/details', name]);
   }
 
-  onInputChange(target: any): void {
-    const { value: inputValue } = target;
-    const filterObj: FilterObject = { inputValue }
-    this.fiteredCountries = this.countryService.filterCountry(filterObj, this.countries);
-  }
-  onSelectorChange(target: any): void {
-    const { value: selectValue } = target;
-    const filterObj: FilterObject = { selectValue }
+  onChange(): void {
+    const inputValue = this.inputValue;
+    const selectValue = this.selectValue;
+    const filterObj: FilterObject = { inputValue, selectValue }
     this.fiteredCountries = this.countryService.filterCountry(filterObj, this.countries);
   }
 }
