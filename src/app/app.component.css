@@ -1,12 +1,12 @@
 header{
     margin: 0;
-    padding: 20px;
+    padding: 20px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 body{
-    height: 100vh;
+    min-height: 100vh;
 }
 h2{
     margin: 0;
