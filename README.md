@@ -1,6 +1,6 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
+# REST Countries API with color theme switcher
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+My solution for the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) using *Angular*. 
 
 ## Table of contents
 
@@ -50,12 +50,12 @@ Users should be able to:
 ### What I learned
 
 Through this project, I had the opportunity to revisit and reinforce fundamental concepts in Angular:
-- Using the **Angular CLI**.
+- Using the ***Angular CLI***.
 - Working with a module based system.
-- Using core modules such as **Routing**.
-- Using directives such as **NgModel**.
-- Working with **RxJS** to deal with reactivity flow.
-- Using a strongly typed programming language such as **TypeScript**.
+- Using core modules such as ***Routing***.
+- Using directives such as ***NgModel***.
+- Working with ***RxJS*** to deal with reactivity flow.
+- Using a strongly typed programming language such as ***TypeScript***.
 
 ## Author
 
