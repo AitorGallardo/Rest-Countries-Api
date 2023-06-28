@@ -1,0 +1,13 @@
+header{
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body{
+    height: 100vh;
+}
+h2{
+    margin: 0;
+}

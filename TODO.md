@@ -3,6 +3,8 @@
 - [X] Search for a country using an input field
 - [X] Filter countries by region.
 - [X] Click through to the border countries on the detail page
-- [ ] Toggle the color scheme between light and dark mode
+- [X] Toggle the color scheme between light and dark mode
 - [ ] Correctly style to match the challenge
 - [ ] Add lazy loading on images
+- [ ] There is larger cards due 2 line text, adjust
+- [ ] Not moving content on switch from page to page

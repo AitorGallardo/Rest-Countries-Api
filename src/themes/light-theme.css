@@ -1,0 +1,24 @@
+body.light-theme{
+    background-color: var(--light-gray-background);
+}
+
+body.light-theme header,input,select{
+    background-color: var(--white);
+}
+
+/* body.light-theme .card__content{
+    background-color: var(--white);
+} */
+
+body.light-theme h1,h2,h3,h4,h5,p,button,span,input,select{
+    color: var(--dark-blue-text);
+}
+
+body.light-theme .theme-background{
+    background-color: var(--white);
+}
+
+body.light-theme .theme-color{
+    color: var(--dark-blue-text);
+}
+    

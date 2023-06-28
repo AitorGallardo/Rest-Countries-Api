@@ -1,4 +1,8 @@
-<!-- <app-country-card [country]="countries[0]"></app-country-card> -->
-<router-outlet>
-
-</router-outlet>
+<body [ngClass]="{ 'dark-theme': isDarkTheme, 'light-theme': !isDarkTheme }">
+    <header>
+        <h2 class="theme-color">Where in the world?</h2>
+        <app-theme-slider (onToggle)="handleTheme($event)"></app-theme-slider>
+    </header>
+    <router-outlet></router-outlet>
+</body>
+  

@@ -1,0 +1,23 @@
+body.dark-theme{
+    background-color: var(--dark-blue-background);
+}
+
+body.dark-theme header,input,select{
+    background-color: var(--dark-blue-elements);
+}
+
+/* body.dark-theme .card__content{
+    background-color: var(--dark-blue-elements);
+} */
+
+body.dark-theme h1,h2,h3,h4,h5,p,button,span,input,select{
+    color: var(--white);
+}
+
+body.dark-theme .theme-background{
+    background-color: var(--dark-blue-elements);
+}
+body.dark-theme .theme-color{
+    color: var(--white);
+}
+    

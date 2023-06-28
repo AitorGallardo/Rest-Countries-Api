@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isDarkTheme = false;
   constructor() {}
+
+  handleTheme(event:boolean){
+    this.isDarkTheme = event;
+    console.log('theme',event);
+  }
 }

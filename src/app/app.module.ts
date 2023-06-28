@@ -9,6 +9,7 @@ import { CountryPageComponent } from './components/country-page/country-page.com
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CountryHomeComponent } from './components/country-home/country-home.component';
+import { ThemeSliderComponent } from './components/theme-slider/theme-slider.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CountryHomeComponent } from './components/country-home/country-home.com
     CountryListComponent,
     CountryCardComponent,
     CountryPageComponent,
-    CountryHomeComponent
+    CountryHomeComponent,
+    ThemeSliderComponent
   ],
   imports: [
     BrowserModule,
