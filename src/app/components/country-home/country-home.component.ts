@@ -10,10 +10,12 @@ import { CountryService } from 'src/app/services/country.service';
   styleUrls: ['./country-home.component.css']
 })
 export class CountryHomeComponent {
+
   inputValue: string = '';
   selectValue: string = '';
   countries: Array<Country> = [];
   fiteredCountries: Array<Country> = [];
+
 
   constructor(private countryService: CountryService, private router: Router) {
     this.countryService.getAllCountries().subscribe((res) => {
@@ -23,12 +25,14 @@ export class CountryHomeComponent {
     })
   }
 
+
   navigate({ name }: { name: string }): void {
-    this.router.navigate(['/details'],{queryParams:{isCode:false}});
+    this.router.navigate(['/details'], { queryParams: { isCode: false } });
   }
 
-  onChange(): void {
+  onChange(selectedValue?:string): void {
     const inputValue = this.inputValue;
+    this.selectValue = selectedValue ? selectedValue : this.selectValue;
     const selectValue = this.selectValue;
     const filterObj: FilterObject = { inputValue, selectValue }
     this.fiteredCountries = this.countryService.filterCountry(filterObj, this.countries);

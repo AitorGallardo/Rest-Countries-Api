@@ -5,18 +5,18 @@
   padding: 0 100px;
 }
 
-.filter-section{
+.filter-section {
   display: flex;
   justify-content: space-between;
   padding: 40px 0px;
 }
 
-.input-container{
+.input-container {
   width: 100%;
   position: relative;
 }
 
-span.search-icon{
+span.search-icon {
   left: 20px;
   top: 50%;
   transform: translate(0, -50%);
@@ -27,7 +27,7 @@ span.search-icon{
   background-color: pink;
 }
 
-input{
+input {
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 15px 20px 15px 60px;
@@ -36,6 +36,9 @@ input{
   font-size: 14px;
 }
 
-input:focus,input:hover{
+input:focus,
+input:hover {
   border: 1px solid gray;
 }
+
+

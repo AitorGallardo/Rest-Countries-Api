@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CountryHomeComponent } from './components/country-home/country-home.component';
 import { ThemeSliderComponent } from './components/theme-slider/theme-slider.component';
+import { RegionSelectorComponent } from './components/region-selector/region-selector.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ThemeSliderComponent } from './components/theme-slider/theme-slider.com
     CountryCardComponent,
     CountryPageComponent,
     CountryHomeComponent,
-    ThemeSliderComponent
+    ThemeSliderComponent,
+    RegionSelectorComponent
   ],
   imports: [
     BrowserModule,
