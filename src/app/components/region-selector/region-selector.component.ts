@@ -25,9 +25,7 @@ export class RegionSelectorComponent {
 
 
     // We want default behaviour on mobile
-    if (window.innerWidth >= 600) {
-
-    }
+    if (window.innerWidth <= 600) return;
 
     this.selectorListener = this.renderer.listen(selector, 'mousedown', (e: any) => {
       // It prevents from showing default selection options element

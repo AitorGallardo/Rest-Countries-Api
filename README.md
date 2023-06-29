@@ -57,6 +57,31 @@ Through this project, I had the opportunity to revisit and reinforce fundamental
 - Working with ***RxJS*** to deal with reactivity flow.
 - Using a strongly typed programming language such as ***TypeScript***.
 
+Also, I learnt a workaround for styled svgs in Angular:
+
+```ts
+import { Component, HostBinding, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-svg-icon',
+  templateUrl: './svg-icon.component.html',
+  styleUrls: ['./svg-icon.component.css']
+})
+export class SvgIconComponent {
+  @HostBinding('style.-webkit-mask-image')
+  private _path!: string;
+
+  @Input()
+  public set path(filePath: string) {
+    this._path = `url("${filePath}")`;
+  }
+}
+```
+```html
+    <app-svg-icon class="search-icon theme-color-as-background" [path]="'assets/search-icon.svg'"></app-svg-icon>
+```
+Found that I could not style *options* inside a ***select*** tag, so i had to find an alternative to achieve the design proposed by the challenge. I did use this [tutorial](https://www.youtube.com/watch?v=-0VuZEYIYuI&t=142s) to create a list and use it as *options* but keeping the accesibility.  
+
 ## Author
 
 - Frontend Mentor - [@AitorGallardo](https://www.frontendmentor.io/profile/AitorGallardo)
