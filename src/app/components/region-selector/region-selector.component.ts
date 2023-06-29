@@ -49,6 +49,10 @@ export class RegionSelectorComponent {
       const select = <HTMLSelectElement>selector?.children[0];
       // To create a list item for each option in our selector with his content
       Array.from(select.children).forEach((option: any) => {
+        // Checks if its the default option to not show it
+        const isHidden = option.getAttribute('hidden')
+        if(typeof isHidden === 'string') return;
+  
         const dropDownOption = this.renderer.createElement('li');
         dropDownOption.textContent = option.textContent;
 
