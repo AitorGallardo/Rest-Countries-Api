@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Country } from 'src/app/models/country.model';
 import { FilterObject } from 'src/app/models/types';
 import { CountryService } from 'src/app/services/country.service';
@@ -10,6 +11,8 @@ import { CountryService } from 'src/app/services/country.service';
   styleUrls: ['./country-home.component.css']
 })
 export class CountryHomeComponent {
+  
+  svgIcon: SafeResourceUrl | null = null;
 
   inputValue: string = '';
   selectValue: string = '';
@@ -17,12 +20,25 @@ export class CountryHomeComponent {
   fiteredCountries: Array<Country> = [];
 
 
-  constructor(private countryService: CountryService, private router: Router) {
+  constructor(private countryService: CountryService, private router: Router,private sanitizer: DomSanitizer) {
+
+    // this.loadSvgIcon();    
     this.countryService.getAllCountries().subscribe((res) => {
       this.countries = res;
       this.fiteredCountries = res;
 
     })
+  }
+  loadSvgIcon() {
+    const svgFile = 'assets/search-icon.svg';
+
+    // Read the SVG file as text
+    fetch(svgFile)
+      .then(response => response.text())
+      .then(svgData => {
+        // Sanitize and assign the SVG data
+        this.svgIcon = this.sanitizer.bypassSecurityTrustHtml(svgData);
+      });
   }
 
 

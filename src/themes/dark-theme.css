@@ -17,7 +17,13 @@ body.dark-theme h1,h2,h3,h4,h5,p,button,span,input,select{
 body.dark-theme .theme-background{
     background-color: var(--dark-blue-elements);
 }
-body.dark-theme .theme-color{
+body.dark-theme .theme-background-as-color{
+    color: var(--dark-blue-elements);
+}
+body.dark-theme .theme-color,.theme-color-as-background{
     color: var(--white);
+}
+body.dark-theme .theme-color-as-background{
+    background-color: var(--white);
 }
     

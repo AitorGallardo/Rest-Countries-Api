@@ -7,7 +7,8 @@
       [(ngModel)]="inputValue"
       (input)="onChange()"
     />
-    <span class="search-icon"></span>
+    <app-svg-icon class="search-icon theme-color-as-background" [path]="'assets/search-icon.svg'"></app-svg-icon>
+    <!-- <span [innerHTML]="svgIcon" class="search-icon theme-color"></span> -->
   </div>
   <app-region-selector (onChangeSelect)="onChange($event)"></app-region-selector>
 </div>

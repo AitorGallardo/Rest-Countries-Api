@@ -17,9 +17,14 @@ body.light-theme h1,h2,h3,h4,h5,p,button,span,input,select{
 body.light-theme .theme-background{
     background-color: var(--white);
 }
+body.light-theme .theme-background-as-color{
+    color: var(--white);
+}
 
 body.light-theme .theme-color{
     color: var(--dark-blue-text);
-    color: var(--dark-blue-text);
+}
+body.light-theme .theme-color-as-background{
+    background-color: var(--dark-blue-text);
 }
     

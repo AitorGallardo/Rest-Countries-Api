@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CountryHomeComponent } from './components/country-home/country-home.component';
 import { ThemeSliderComponent } from './components/theme-slider/theme-slider.component';
 import { RegionSelectorComponent } from './components/region-selector/region-selector.component';
+import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegionSelectorComponent } from './components/region-selector/region-sel
     CountryPageComponent,
     CountryHomeComponent,
     ThemeSliderComponent,
-    RegionSelectorComponent
+    RegionSelectorComponent,
+    SvgIconComponent
   ],
   imports: [
     BrowserModule,
