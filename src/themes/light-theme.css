@@ -20,5 +20,6 @@ body.light-theme .theme-background{
 
 body.light-theme .theme-color{
     color: var(--dark-blue-text);
+    color: var(--dark-blue-text);
 }
     

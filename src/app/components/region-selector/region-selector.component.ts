@@ -43,6 +43,8 @@ export class RegionSelectorComponent {
       // and add the class defined in the scope of this component
       dropDown = this.renderer.createElement('ul');
       this.renderer.addClass(dropDown, 'selector-options');
+      this.renderer.addClass(dropDown, 'theme-background');
+      this.renderer.addClass(dropDown, 'theme-color');
 
       const select = <HTMLSelectElement>selector?.children[0];
       // To create a list item for each option in our selector with his content
