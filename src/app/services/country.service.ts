@@ -3,12 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Country } from '../models/country.model';
-import { FilterObject } from '../models/types';
+import { CountryDictionary, FilterObject } from '../models/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
+
+  private countryNamesDictionary = new Map<string, string>();
 
   API_URL = 'https://restcountries.com/v3.1/';
 
@@ -24,8 +26,9 @@ export class CountryService {
         const rawCountries = <[]>res;
         const countries: Array<Country> = [];
         rawCountries.map(res => {
-          const event = Country.create(res)
-          countries.push(event);
+          const country = Country.create(res)
+          countries.push(country);
+          this.countryNamesDictionary.set(country.cca3,country.name)
         });
         return countries;
       }));
@@ -36,6 +39,7 @@ export class CountryService {
 
     return this.http.get(url).pipe(
       map(res => {
+        console.log('res',res);
         const [rawCountry] = <Array<any>>res;
         const country = Country.create(rawCountry)
         return country;
@@ -46,6 +50,8 @@ export class CountryService {
 
     return this.http.get(url).pipe(
       map(res => {
+        console.log('res',res);
+
         const [rawCountry] = <Array<any>>res;
         const country = Country.create(rawCountry)
         return country;
@@ -67,6 +73,10 @@ export class CountryService {
 
   private includesWithLowerCase(mainValue: string, checkingValue: string): boolean {
     return mainValue.toLowerCase().includes(checkingValue.toLowerCase())
+  }
+
+  public getContryName(cca3:string) : string | null{
+    return this.countryNamesDictionary.get(cca3) ?? null;
   }
 
 

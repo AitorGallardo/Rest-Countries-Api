@@ -9,3 +9,5 @@
 - [ ] Add lazy loading on images
 - [ ] There is larger cards due 2 line text, adjust
 - [ ] Not moving content on switch from page to page
+- [ ] Normalize behaviour when there is tons of border countries, adding more rows
+- [ ] Normalize border countries larger text in one line/ also 'border countries' tags in a single lane

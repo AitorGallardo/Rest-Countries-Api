@@ -1,11 +1,8 @@
-interface CurrencyObj<T> {
-   key: string;
-   value: T;
-}
 
 export class Country {
 
    name: string;
+   cca3:string;
    native_name: string;
    population: number;
    flag_img: string;
@@ -21,6 +18,7 @@ export class Country {
 
    constructor() {
       this.name = '';
+      this.cca3 = '';
       this.native_name = '';
       this.population = 0;
       this.flag_img = '';
@@ -39,6 +37,7 @@ export class Country {
       const country = new Country();
       if (json) {
          country.name = json.name.common ? json.name.common : '';
+         country.cca3 = json.cca3 ? json.cca3 : '';
          country.native_name = json.name.official ? json.name.official : '';
          country.population = json.population ? json.population : 0;
          country.flag_img = json.flags.png ? json.flags.png : null;

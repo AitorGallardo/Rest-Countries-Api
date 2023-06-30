@@ -39,7 +39,7 @@
           class="theme-background theme-color"
           *ngFor="let countryName of country.border_countries"
           (click)="goToBorderCountry(countryName)"
-          >{{ countryName }}</span
+          >{{ countryService.getContryName(countryName) }}</span
         >
         <!-- <span>France</span>
         <span>Germany</span>

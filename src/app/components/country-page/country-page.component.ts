@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class CountryPageComponent {
   country: Country;
-  constructor(private route: ActivatedRoute, private countryService: CountryService, private location: Location, private router: Router) {
+  constructor(private route: ActivatedRoute, public countryService: CountryService, private location: Location, private router: Router) {
     this.country = new Country();
   }
 
