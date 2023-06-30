@@ -1,26 +1,50 @@
-
-<button class="theme-background theme-color" (click)="goBack()">Back</button>
 <div class="country-page_container">
-  <img [src]="country.flag_img" [alt]="country.flag_alt" />
-  <div class="country-page_data">
-    <h2 class="theme-color">{{country.name}}</h2>
-    <div class="data-columns">
-      <p class="theme-color"><strong>Native Name: </strong>{{country.native_name}}</p>
-      <p class="theme-color"><strong>Popoulation: </strong>{{country.population}}</p>
-      <p class="theme-color"><strong>Region: </strong>{{country.region}}</p>
-      <p class="theme-color"><strong>Sub Region: </strong>{{country.sub_region}}</p>
-      <p class="theme-color"><strong>Capital: </strong>{{country.capital}}</p>
-      <p class="theme-color"><strong>Top level Domain: </strong>{{country.top_level_domain}}</p>
-      <p class="theme-color"><strong>Currencies: </strong>{{country.currencies}}</p>
-      <p class="theme-color"><strong>Languages: </strong>
-      <span class="theme-color" *ngFor="let language of country.languages">{{language}}</span>  
-    </p>
-    </div>
-    <p class="border-countries theme-color"><strong>Border Countries: </strong>
-      <span class="theme-color" *ngFor="let countryName of country.border_countries" (click)="goToBorderCountry(countryName)">{{countryName}}</span>
+  <button class="theme-background theme-color" (click)="goBack()">Back</button>
+  <div class="country-page_container-data">
+    <img [src]="country.flag_img" [alt]="country.flag_alt" />
+    <div class="country-page_data">
+      <h2 class="theme-color">{{ country.name }}</h2>
+      <div class="data-columns">
+        <p class="theme-color">
+          <strong>Native Name: </strong>{{ country.native_name }}
+        </p>
+        <p class="theme-color">
+          <strong>Popoulation: </strong>{{ country.population }}
+        </p>
+        <p class="theme-color"><strong>Region: </strong>{{ country.region }}</p>
+        <p class="theme-color">
+          <strong>Sub Region: </strong>{{ country.sub_region }}
+        </p>
+        <p class="theme-color">
+          <strong>Capital: </strong>{{ country.capital }}
+        </p>
+        <p class="theme-color">
+          <strong>Top level Domain: </strong>{{ country.top_level_domain }}
+        </p>
+        <p class="theme-color">
+          <strong>Currencies: </strong>{{ country.currencies }}
+        </p>
+        <p class="theme-color">
+          <strong>Languages: </strong>
+          <span
+            class="theme-color"
+            *ngFor="let language of country.languages"
+            >{{ language }}</span
+          >
+        </p>
+      </div>
+      <p class="border-countries theme-color">
+        <strong>Border Countries: </strong>
+        <span
+          class="theme-background theme-color"
+          *ngFor="let countryName of country.border_countries"
+          (click)="goToBorderCountry(countryName)"
+          >{{ countryName }}</span
+        >
         <!-- <span>France</span>
         <span>Germany</span>
         <span>Netherlands</span> -->
-    </p>
+      </p>
+    </div>
   </div>
 </div>

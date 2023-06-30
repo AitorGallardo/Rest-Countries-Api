@@ -19,6 +19,7 @@
   --white: hsl(0, 0%, 100%);
   --font-size-home:14px;
   --font-size-details:16px;
+  --box-shadow:0 0 6px 3px rgba(0, 0, 0, 0.151);
   font-family: 'Nunito Sans', sans-serif;
 }
 
