@@ -1,6 +1,8 @@
 # REST Countries API with color theme switcher
 
-My solution for the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) using *Angular*. 
+My solution for the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) using _Angular_.
+
+- [Live Site](https://rest-countries-api-gmaitor.vercel.app/)
 
 ## Table of contents
 
@@ -13,7 +15,6 @@ My solution for the [REST Countries API with color theme switcher challenge on F
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-
 ## Overview
 
 ### The challenge
@@ -25,15 +26,31 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- Toggle the color scheme between light and dark mode _(optional)_
 
 ### Screenshot
 
+<table>
+        <tr>
+            <td>
+                <img src="./src/assets/screenshot-full.png"
+                    alt="Desktop site" width="100%" title="Desktop site"  />
+            </td>
+		        <td>
+                <img src="./src/assets/screenshot-active.png"
+                    alt="Mobile site" width="100%" title="Mobile site"/>
+            </td>
+            <td>
+                <img src="./src/assets/screenshot-active-light.png"
+                    alt="Active site" width="100%" title="Active site"/>
+            </td>
+            </tr>
+</table>
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://rest-countries-api-gmaitor.vercel.app/](https://rest-countries-api-gmaitor.vercel.app/)
 
 ## My process
 
@@ -50,25 +67,26 @@ Users should be able to:
 ### What I learned
 
 Through this project, I had the opportunity to revisit and reinforce fundamental concepts in Angular:
-- Using the ***Angular CLI***.
+
+- Using the **_Angular CLI_**.
 - Working with a module based system.
-- Using core modules such as ***Routing***.
-- Using directives such as ***NgModel***.
-- Working with ***RxJS*** to deal with reactivity flow.
-- Using a strongly typed programming language such as ***TypeScript***.
+- Using core modules such as **_Routing_**.
+- Using directives such as **_NgModel_**.
+- Working with **_RxJS_** to deal with reactivity flow.
+- Using a strongly typed programming language such as **_TypeScript_**.
 
 Also, I learnt a workaround for styled svgs in Angular:
 
 ```ts
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-svg-icon',
-  templateUrl: './svg-icon.component.html',
-  styleUrls: ['./svg-icon.component.css']
+  selector: "app-svg-icon",
+  templateUrl: "./svg-icon.component.html",
+  styleUrls: ["./svg-icon.component.css"],
 })
 export class SvgIconComponent {
-  @HostBinding('style.-webkit-mask-image')
+  @HostBinding("style.-webkit-mask-image")
   private _path!: string;
 
   @Input()
@@ -77,12 +95,13 @@ export class SvgIconComponent {
   }
 }
 ```
+
 ```html
-    <app-svg-icon class="search-icon theme-color-as-background" [path]="'assets/search-icon.svg'"></app-svg-icon>
+<app-svg-icon class="search-icon theme-color-as-background" [path]="'assets/search-icon.svg'"></app-svg-icon>
 ```
-Found that I could not style *options* inside a ***select*** tag, so i had to find an alternative to achieve the design proposed by the challenge. I did use this [tutorial](https://www.youtube.com/watch?v=-0VuZEYIYuI&t=142s) to create a list and use it as *options* but keeping the accesibility.  
+
+Found that I could not style _options_ inside a **_select_** tag, so i had to find an alternative to achieve the design proposed by the challenge. I did use this [tutorial](https://www.youtube.com/watch?v=-0VuZEYIYuI&t=142s) to create a list and use it as _options_ but keeping the accesibility.
 
 ## Author
 
 - Frontend Mentor - [@AitorGallardo](https://www.frontendmentor.io/profile/AitorGallardo)
-

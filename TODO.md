@@ -4,7 +4,7 @@
 - [X] Filter countries by region.
 - [X] Click through to the border countries on the detail page
 - [X] Toggle the color scheme between light and dark mode
-- [ ] Acabar select styes, poner options y arros correctly / poner input icon
+- [X] Acabar select styes, poner options y arros correctly / poner input icon
 - [ ] Correctly style to match the challenge
 - [ ] Add lazy loading on images
 - [ ] There is larger cards due 2 line text, adjust
