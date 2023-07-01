@@ -28,3 +28,11 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+p{
+  margin: 0;
+}
+
+h1{
+  margin: 0;
+}

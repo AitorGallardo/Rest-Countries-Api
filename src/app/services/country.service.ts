@@ -22,7 +22,7 @@ export class CountryService {
 
     return this.http.get(allUrl).pipe(
       map(res => {
-
+        console.log('res ', res);
         const rawCountries = <[]>res;
         const countries: Array<Country> = [];
         rawCountries.map(res => {
