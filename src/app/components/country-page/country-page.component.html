@@ -17,7 +17,7 @@
           <strong>Top level Domain: </strong>{{ country.top_level_domain }}
         </p>
         <p class="theme-color">
-          <strong>Popoulation: </strong>{{ country.population }}
+          <strong>Popoulation: </strong>{{ country?.population?.toLocaleString() }}
         </p>
         <p class="theme-color">
           <strong>Currencies: </strong>{{ country.currencies }}
