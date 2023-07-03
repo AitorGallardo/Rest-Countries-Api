@@ -1,5 +1,5 @@
 <div class="card__container">
-  <img class="card__img" [src]="country ? country.flag_img : ''" alt="" />
+    <img class="card__img" [src]="country ? country.flag_img : ''" alt="" />
   <section class="card__content theme-background">
     <h3 class="theme-color">{{country ? country.name : 'unknown'}}</h3>
     <p class="theme-color"><strong>Population: </strong>{{country ? country.population.toLocaleString() : 0}}</p>
