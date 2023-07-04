@@ -1,12 +1,14 @@
 <div class="country-page_container">
   <button class="theme-background theme-color" (click)="goBack()">
-    <app-svg-icon class="arrow-icon theme-color-as-background" [path]="'assets/arrow_left-icon.svg'"></app-svg-icon>
+    <app-svg-icon
+      class="arrow-icon theme-color-as-background"
+      [path]="'assets/arrow_left-icon.svg'"
+    ></app-svg-icon>
 
     Back
   </button>
   <div class="country-page_container-content">
-
-      <img [src]="country.flag_img" [alt]="country.flag_alt" />
+    <img [src]="country.flag_img" [alt]="country.flag_alt" />
     <div class="country-page_data">
       <h1 class="theme-color">{{ country.name }}</h1>
       <div class="data-columns">
@@ -17,7 +19,8 @@
           <strong>Top level Domain: </strong>{{ country.top_level_domain }}
         </p>
         <p class="theme-color">
-          <strong>Popoulation: </strong>{{ country?.population?.toLocaleString() }}
+          <strong>Popoulation: </strong
+          >{{ country?.population?.toLocaleString() }}
         </p>
         <p class="theme-color">
           <strong>Currencies: </strong>{{ country.currencies }}
@@ -28,7 +31,9 @@
           <span
             class="theme-color"
             *ngFor="let language of country.languages"
-            >{{ language===country.languages[0] ? language: ', ' + language }}</span
+            >{{
+              language === country.languages[0] ? language : ", " + language
+            }}</span
           >
         </p>
         <p class="theme-color">
@@ -40,12 +45,13 @@
       </div>
       <p class="border-countries theme-color">
         <strong>Border Countries: </strong>
-        <span
+          <span
           class="theme-background theme-color"
           *ngFor="let countryName of country.border_countries"
           (click)="goToBorderCountry(countryName)"
-          >{{ countryService.getContryName(countryName) }}</span
-        >
+          >{{ countryService.getContryName(countryName) }}
+        </span>
+
         <!-- <span>France</span>
         <span>Germany</span>
         <span>Netherlands</span> -->

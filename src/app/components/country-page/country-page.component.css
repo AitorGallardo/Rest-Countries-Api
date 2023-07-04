@@ -97,3 +97,46 @@ button .arrow-icon {
   height: 14px;
   -webkit-mask-repeat: no-repeat;
 }
+
+@media (width<= 375px) {
+  :host {
+    font-size: 8px;
+  }
+  .country-page_container {
+    padding: 10px;
+  }
+  .country-page_container-content {
+    flex-direction: column;
+  }
+  img {
+    object-fit: cover;
+    width: 200px;
+    height: 100px;
+    flex: 1;
+  }
+
+  .data-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    grid-row-gap: 40px;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+  }
+  .data-columns p:nth-child(3) {
+    grid-row-start: 2;
+  }
+  .data-columns p:nth-child(5) {
+    grid-row-start: 3;
+  }
+  .data-columns p:nth-child(7) {
+    grid-row-start: 4;
+  }
+  .data-columns p:nth-child(8) {
+    grid-row-start: 5;
+    margin-bottom: 20px;
+  }
+
+
+}

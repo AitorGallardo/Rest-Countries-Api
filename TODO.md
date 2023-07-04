@@ -12,5 +12,5 @@
 - [X] Normalize behaviour when there is tons of border countries, adding more rows
 - [X] Normalize border countries larger text in one line/ also 'border countries' tags in a single lane
 - [X] On enter directly on page details dictionary wont load correctly
-- [ ] Animation for box shadowex buttons
+- [X] Animation for box shadowex buttons
 - [ ] Responsive mobile
