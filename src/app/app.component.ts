@@ -9,7 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isDarkTheme = true;
-  constructor() {}
+  constructor(private countryService: CountryService,) {
+    this.countryService.getAllCountries().subscribe();
+  }
 
   handleTheme(event:boolean){
     this.isDarkTheme = event;

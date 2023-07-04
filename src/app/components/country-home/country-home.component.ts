@@ -17,17 +17,16 @@ export class CountryHomeComponent {
   inputValue: string = '';
   selectValue: string = '';
   countries: Array<Country> = [];
-  fiteredCountries: Array<Country> = [];
+  filteredCountries: Array<Country> = [];
 
 
   constructor(private countryService: CountryService, private router: Router,private sanitizer: DomSanitizer) {
 
-    // this.loadSvgIcon();    
     this.countryService.getAllCountries().subscribe((res) => {
       this.countries = res;
-      this.fiteredCountries = res;
-
+      this.filteredCountries = res;
     })
+
   }
   loadSvgIcon() {
     const svgFile = 'assets/search-icon.svg';
@@ -51,6 +50,6 @@ export class CountryHomeComponent {
     this.selectValue = selectedValue ? selectedValue : this.selectValue;
     const selectValue = this.selectValue;
     const filterObj: FilterObject = { inputValue, selectValue }
-    this.fiteredCountries = this.countryService.filterCountry(filterObj, this.countries);
+    this.filteredCountries = this.countryService.filterCountry(filterObj, this.countries);
   }
 }

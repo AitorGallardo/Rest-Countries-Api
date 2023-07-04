@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable,of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Country } from '../models/country.model';
 import { CountryDictionary, FilterObject } from '../models/types';
@@ -11,6 +11,7 @@ import { CountryDictionary, FilterObject } from '../models/types';
 export class CountryService {
 
   private countryNamesDictionary = new Map<string, string>();
+  private allCountries: Array<Country> = [];
 
   API_URL = 'https://restcountries.com/v3.1/';
 
@@ -19,6 +20,10 @@ export class CountryService {
 
   getAllCountries(): Observable<Country[]> {
     const allUrl = `${this.API_URL}/all`;
+
+    if(this.allCountries.length > 0){
+      return of (this.allCountries);
+    }
 
     return this.http.get(allUrl).pipe(
       map(res => {
@@ -30,9 +35,11 @@ export class CountryService {
           countries.push(country);
           this.countryNamesDictionary.set(country.cca3,country.name)
         });
+        this.allCountries = countries;
         return countries;
       }));
   }
+
 
   getCountryByName(name: string): Observable<Country> {
     const url = `${this.API_URL}name/${name}`;

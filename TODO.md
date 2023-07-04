@@ -5,10 +5,12 @@
 - [X] Click through to the border countries on the detail page
 - [X] Toggle the color scheme between light and dark mode
 - [X] Acabar select styes, poner options y arros correctly / poner input icon
-- [ ] Correctly style to match the challenge
+- [X] Correctly style to match the challenge
 - [ ] Add lazy loading on images
-- [ ] There is larger cards due 2 line text, adjust
-- [ ] Not moving content on switch from page to page
-- [ ] Normalize behaviour when there is tons of border countries, adding more rows
-- [ ] Normalize border countries larger text in one line/ also 'border countries' tags in a single lane
-- [ ] On enter directly on page details dictionary wont load correctly
+- [X] There is larger cards due 2 line text, adjust
+- [X] Not moving content on switch from page to page
+- [X] Normalize behaviour when there is tons of border countries, adding more rows
+- [X] Normalize border countries larger text in one line/ also 'border countries' tags in a single lane
+- [X] On enter directly on page details dictionary wont load correctly
+- [ ] Animation for box shadowex buttons
+- [ ] Responsive mobile
