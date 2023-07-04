@@ -1,0 +1,23 @@
+<div *ngIf="screenSize !== 'small'" class="border-countries theme-color">
+  <strong>Border Countries: </strong>
+  <span
+    class="span-items theme-background theme-color"
+    *ngFor="let name of borderCountriesName"
+    (click)="onClick(name)"
+  >
+    {{ name }}
+  </span>
+</div>
+
+<div *ngIf="screenSize === 'small'" class="border-countries-small theme-color">
+  <strong>Border Countries: </strong>
+  <div>
+    <span
+      class="span-items theme-background theme-color"
+      *ngFor="let name of borderCountriesName"
+      (click)="onClick(name)"
+    >
+      {{ name }}
+    </span>
+  </div>
+</div>

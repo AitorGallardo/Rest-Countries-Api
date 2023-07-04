@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class CountryPageComponent {
   country: Country;
+  borderCountriesName: string[] = [];
   constructor(private route: ActivatedRoute, public countryService: CountryService, private location: Location, private router: Router) {
     this.country = new Country();
   }
@@ -23,8 +24,10 @@ export class CountryPageComponent {
 
   goToBorderCountry(name: string): void {
 
-    this.countryService.getCountryByCode(name).subscribe(res => {
+    this.countryService.getCountryByName(name).subscribe(res => {
       this.country = res;
+      this.updateBorderCountries()
+
       const newUrl = `/details/${this.country.name}`;
 
       this.location.replaceState(newUrl);
@@ -47,10 +50,22 @@ export class CountryPageComponent {
       const name = params.get('name') ? <string>params.get('name') : '';
       this.countryService.getCountryByName(name).subscribe(res => {
         this.country = res;
+        this.updateBorderCountries()
       });
     });
 
 
+  }
+
+  updateBorderCountries() {
+    this.borderCountriesName = [];
+    this.country.border_countries.map((res) => {
+      console.log('cada name',res);
+      this.countryService.getContryName(res).then(hola=>{
+        console.log('no entiendo',hola);
+        this.borderCountriesName.push(hola);
+      });
+    })
   }
 
 

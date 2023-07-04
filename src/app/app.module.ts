@@ -12,6 +12,7 @@ import { CountryHomeComponent } from './components/country-home/country-home.com
 import { ThemeSliderComponent } from './components/theme-slider/theme-slider.component';
 import { RegionSelectorComponent } from './components/region-selector/region-selector.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
+import { BorderCountriesComponent } from './components/border-countries/border-countries.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
     CountryHomeComponent,
     ThemeSliderComponent,
     RegionSelectorComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    BorderCountriesComponent
   ],
   imports: [
     BrowserModule,

@@ -56,7 +56,6 @@ export class RegionSelectorComponent {
 
 
         this.renderer.listen(dropDownOption, 'mousedown', (e: any) => {
-          console.log('dentro de la option',);
           // To prevent from trigger de outter selector event listener
           e.stopPropagation();
           select.value = option.value;

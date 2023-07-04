@@ -10,11 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isDarkTheme = true;
   constructor(private countryService: CountryService,) {
-    this.countryService.getAllCountries().subscribe();
+    this.countryService.getAllCountries().subscribe((res)=>{
+      console.log('ENTRAMOS',res);
+    });
   }
 
   handleTheme(event:boolean){
     this.isDarkTheme = event;
-    console.log('theme',event);
   }
 }

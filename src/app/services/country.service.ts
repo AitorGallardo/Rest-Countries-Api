@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable,of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Country } from '../models/country.model';
 import { CountryDictionary, FilterObject } from '../models/types';
@@ -11,6 +11,7 @@ import { CountryDictionary, FilterObject } from '../models/types';
 export class CountryService {
 
   private countryNamesDictionary = new Map<string, string>();
+  private countryNamesDictionarySubject: BehaviorSubject<any> = new BehaviorSubject<any>(false);
   private allCountries: Array<Country> = [];
 
   API_URL = 'https://restcountries.com/v3.1/';
@@ -21,20 +22,23 @@ export class CountryService {
   getAllCountries(): Observable<Country[]> {
     const allUrl = `${this.API_URL}/all`;
 
-    if(this.allCountries.length > 0){
-      return of (this.allCountries);
+    if (this.allCountries.length > 0) {
+      this.countryNamesDictionarySubject.next(true);
+      this.countryNamesDictionarySubject.complete();
+      return of(this.allCountries);
     }
 
     return this.http.get(allUrl).pipe(
       map(res => {
-        console.log('res ', res);
         const rawCountries = <[]>res;
         const countries: Array<Country> = [];
         rawCountries.map(res => {
           const country = Country.create(res)
           countries.push(country);
-          this.countryNamesDictionary.set(country.cca3,country.name)
+          this.countryNamesDictionary.set(country.cca3, country.name)
         });
+        this.countryNamesDictionarySubject.next(true);
+        this.countryNamesDictionarySubject.complete();
         this.allCountries = countries;
         return countries;
       }));
@@ -46,7 +50,6 @@ export class CountryService {
 
     return this.http.get(url).pipe(
       map(res => {
-        console.log('res',res);
         const [rawCountry] = <Array<any>>res;
         const country = Country.create(rawCountry)
         return country;
@@ -57,7 +60,6 @@ export class CountryService {
 
     return this.http.get(url).pipe(
       map(res => {
-        console.log('res',res);
 
         const [rawCountry] = <Array<any>>res;
         const country = Country.create(rawCountry)
@@ -82,8 +84,15 @@ export class CountryService {
     return mainValue.toLowerCase().includes(checkingValue.toLowerCase())
   }
 
-  public getContryName(cca3:string) : string | null{
-    return this.countryNamesDictionary.get(cca3) ?? null;
+  public getContryName(cca3: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.countryNamesDictionarySubject.subscribe((isCompleted) => {
+        if(isCompleted){
+          const res = <string>this.countryNamesDictionary.get(cca3);
+          resolve(res);
+        }
+      })
+    });
   }
 
 

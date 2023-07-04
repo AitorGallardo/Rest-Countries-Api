@@ -39,13 +39,20 @@ img {
 .data-columns p:nth-child(8) {
   grid-column: 1;
 }
+.items {
+  /* display: unset; */
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 10px; */
+}
 .border-countries {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  /* flex-direction: column; */
   align-items: center;
 }
-.border-countries > span {
+.border-countries > span > span {
   padding: 4px 35px;
   border: none;
   outline: none;
@@ -53,7 +60,6 @@ img {
   cursor: pointer;
   box-shadow: var(--box-shadow);
   transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-
 }
 
 .border-countries > span:hover {
@@ -137,6 +143,4 @@ button .arrow-icon {
     grid-row-start: 5;
     margin-bottom: 20px;
   }
-
-
 }
