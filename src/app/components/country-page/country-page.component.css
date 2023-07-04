@@ -14,8 +14,6 @@
   width: 100%;
 }
 
-
-
 img {
   object-fit: cover;
   width: 750px;
@@ -31,7 +29,7 @@ img {
 .data-columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, auto); 
+  grid-template-rows: repeat(5, auto);
   gap: 10px;
   grid-column-gap: 40px;
   margin-top: 30px;
@@ -54,10 +52,16 @@ img {
   border-radius: 4px;
   cursor: pointer;
   box-shadow: var(--box-shadow);
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+
 }
 
 .border-countries > span:hover {
-  /* background-color: #ececec; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.border-countries > span:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 button {
@@ -73,7 +77,20 @@ button {
   font-size: 14px;
   font-family: "Nunito Sans", sans-serif;
   align-self: flex-start;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* button:hover::after {
+    opacity: 1;
+} */
 
 button .arrow-icon {
   width: 14px;
