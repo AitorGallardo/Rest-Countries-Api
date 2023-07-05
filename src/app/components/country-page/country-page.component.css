@@ -40,16 +40,15 @@ img {
   grid-column: 1;
 }
 
-
 .border-countries {
   display: flex;
   gap: 20px;
 }
-.border-countries strong{
+.border-countries strong {
   white-space: nowrap;
 }
 
-.border-countries > div{
+.border-countries > div {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -107,13 +106,6 @@ button .arrow-icon {
   -webkit-mask-repeat: no-repeat;
 }
 
-@media (width< 1440px) {
-  .border-countries {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-}
 @media (width<= 576px) {
   :host {
     /* font-size: 12px; */
@@ -141,8 +133,8 @@ button .arrow-icon {
     margin-top: 30px;
     margin-bottom: 70px;
   }
-.data-columns p:nth-child(3) {
-  grid-row-start: 2;
+  .data-columns p:nth-child(3) {
+    grid-row-start: 2;
   }
   .data-columns p:nth-child(5) {
     grid-row-start: 3;
@@ -154,19 +146,64 @@ button .arrow-icon {
     grid-row-start: 5;
     margin-bottom: 20px;
   }
-
-  /* button {
-    padding: 6px 20px;
-    font-size: 10px;
+}
+@media (width<= 1250px) {
+  .country-page_container-content {
+    flex-direction: column;
+    gap: 40px;
   }
-
-  button .arrow-icon {
-    width: 10px;
-    height: 10px;
-    -webkit-mask-repeat: no-repeat;
+  .data-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    grid-row-gap: 40px;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 70px;
   }
-  .span-items{
-    font-size: 10px;
-  } */
+  .data-columns p:nth-child(3) {
+    grid-row-start: 2;
+  }
+  .data-columns p:nth-child(5) {
+    grid-row-start: 3;
+  }
+  .data-columns p:nth-child(7) {
+    grid-row-start: 4;
+  }
+  .data-columns p:nth-child(8) {
+    grid-row-start: 5;
+    margin-bottom: 20px;
+  }
+  img {
+    object-fit: cover;
+    width: auto;
+    height: auto;
+    flex: 1;
+  }
+}
 
+@media (1250px < width <= 1350px) {
+  img {
+    object-fit: cover;
+    width: 600px;
+    height: 450px;
+    flex: 1;
+  }
+}
+
+@media (width< 1440px) {
+  .data-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    gap: 10px;
+    grid-column-gap: 40px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+  }
+  .border-countries {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
