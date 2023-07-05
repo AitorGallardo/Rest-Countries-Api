@@ -141,8 +141,8 @@ button .arrow-icon {
     margin-top: 30px;
     margin-bottom: 70px;
   }
-  .data-columns p:nth-child(3) {
-    grid-row-start: 2;
+.data-columns p:nth-child(3) {
+  grid-row-start: 2;
   }
   .data-columns p:nth-child(5) {
     grid-row-start: 3;

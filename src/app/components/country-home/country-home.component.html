@@ -12,4 +12,6 @@
   </div>
   <app-region-selector (onChangeSelect)="onChange($event)"></app-region-selector>
 </div>
-<app-country-list [countries]="filteredCountries"></app-country-list>
+<div class="list-container">
+  <app-country-list [countries]="filteredCountries"></app-country-list>
+</div>
