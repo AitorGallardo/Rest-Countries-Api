@@ -43,19 +43,21 @@
           <strong>Capital: </strong>{{ country.capital }}
         </p>
       </div>
-      <p class="border-countries theme-color">
+      <div class="border-countries theme-color">
         <strong>Border Countries: </strong>
+        <div>
           <span
-          class="theme-background theme-color"
+          class="span-items theme-background theme-color"
           *ngFor="let countryName of country.border_countries"
           (click)="goToBorderCountry(countryName)"
           >{{ countryService.getContryName(countryName) }}
         </span>
+        </div>
 
         <!-- <span>France</span>
         <span>Germany</span>
         <span>Netherlands</span> -->
-      </p>
+      </div>
     </div>
   </div>
 </div>
