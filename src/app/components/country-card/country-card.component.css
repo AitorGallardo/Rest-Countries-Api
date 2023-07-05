@@ -33,3 +33,11 @@
   padding: 10px 25px 40px 25px;
   border-radius: 0 0 6px 6px;
 }
+
+
+@media (width<= 830px) {
+  .card__img {
+    max-height: 285px;
+  }
+  
+}

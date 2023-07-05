@@ -114,7 +114,7 @@ button .arrow-icon {
     gap: 20px;
   }
 }
-@media (width<= 375px) {
+@media (width<= 576px) {
   :host {
     /* font-size: 12px; */
   }

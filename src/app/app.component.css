@@ -1,14 +1,23 @@
-header{
-    margin: 0;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--box-shadow);
+header {
+  margin: 0;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
 }
-body{
-    min-height: 100vh;
+body {
+  min-height: 100vh;
 }
-h2{
-    margin: 0;
+h2 {
+  margin: 0;
+}
+
+@media (width < 830px) {
+  header {
+    padding: 20px 15px;
+  }
+  h2{
+    font-size: 14px;
+  }
 }
