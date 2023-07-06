@@ -13,5 +13,3 @@
 - [X] On enter directly on page details dictionary wont load correctly
 - [X] Animation for box shadowex buttons
 - [X] Responsive mobile
-- [ ] Add lazy loading on images
-- [ ] Cambiar icon del theme
