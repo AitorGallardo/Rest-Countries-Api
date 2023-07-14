@@ -33,15 +33,15 @@ Users should be able to:
 <table>
         <tr>
             <td>
-                <img src="./src/assets/screenshot-full.png"
+                <img src="./src/assets/screenshot-mobile.png"
                     alt="Desktop site" width="100%" title="Desktop site"  />
             </td>
 		        <td>
-                <img src="./src/assets/screenshot-active.png"
+                <img src="./src/assets/screenshot-full-dark.png"
                     alt="Mobile site" width="100%" title="Mobile site"/>
             </td>
             <td>
-                <img src="./src/assets/screenshot-active-light.png"
+                <img src="./src/assets/screenshot-full-light-active.png"
                     alt="Active site" width="100%" title="Active site"/>
             </td>
             </tr>
@@ -75,7 +75,7 @@ Through this project, I had the opportunity to revisit and reinforce fundamental
 - Working with **_RxJS_** to deal with reactivity flow.
 - Using a strongly typed programming language such as **_TypeScript_**.
 
-Also, I learnt a workaround for styled svgs in Angular:
+- I learnt a workaround for styled svgs in Angular:
 
 ```ts
 import { Component, HostBinding, Input } from "@angular/core";
@@ -100,7 +100,28 @@ export class SvgIconComponent {
 <app-svg-icon class="search-icon theme-color-as-background" [path]="'assets/search-icon.svg'"></app-svg-icon>
 ```
 
-Found that I could not style _options_ inside a **_select_** tag, so i had to find an alternative to achieve the design proposed by the challenge. I did use this [tutorial](https://www.youtube.com/watch?v=-0VuZEYIYuI&t=142s) to create a list and use it as _options_ but keeping the accesibility.
+- Found that I could not style _options_ inside a **_select_** tag, so i had to find an alternative to achieve the design proposed by the challenge. I did use this [tutorial](https://www.youtube.com/watch?v=-0VuZEYIYuI&t=142s) to create a list and use it as _options_ but keeping the accesibility.
+
+- Used a dictionary, in this case a TS map to easily retrieve the country name based on its abbreviation.
+
+```ts
+private countryNamesDictionary = new Map<string, string>();
+
+public getContryName(cca3:string) : string | null{
+  return this.countryNamesDictionary.get(cca3) ?? null;
+}
+```
+
+```html
+<div>
+  <span
+  class="span-items theme-background theme-color"
+  *ngFor="let countryName of country.border_countries"
+  (click)="goToBorderCountry(countryName)"
+  >{{ countryService.getContryName(countryName) }}
+</span>
+</div>
+```
 
 ## Author
 
