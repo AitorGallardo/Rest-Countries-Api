@@ -49,7 +49,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/rest-countries-with-angular-_aOUj4fT1J)
 - Live Site URL: [https://rest-countries-api-gmaitor.vercel.app/](https://rest-countries-api-gmaitor.vercel.app/)
 
 ## My process
