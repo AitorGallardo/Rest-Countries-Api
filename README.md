@@ -61,7 +61,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - TypeScript
-- [Angular](https://reactjs.org/) - Web Framework
+- [Angular](https://angular.io/) - Web Framework
 - [RxJS](https://rxjs.dev/) - Reactive Library
 
 ### What I learned
